@@ -31,11 +31,6 @@ export const projects: Project[] = [
 {
   slug: "NOMA",
   image: "/nomacar.png",
-  images: [
-     "/AORTAI-THECROSS.jpg", 
-     "/blueia.jpg",
-     "/hero.jpg"
-  ], 
   featuredInResume: true,
   pt: {
     title: "NOMA",

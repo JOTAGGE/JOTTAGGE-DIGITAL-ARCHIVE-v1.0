@@ -5,8 +5,8 @@ import Link from "next/link";
 import { knowledgePosts } from "@/data/knowledge";
 import { authors } from "@/data/authors";
 import { useLanguage } from "@/context/LanguageContext";
-import Reveal from "@/app/components/Reveal";
 import ArchiveFooter from "@/app/components/ArchiveFooter";
+import Reveal from "@/app/components/Reveal";
 
 export default function KnowledgePage() {
   const { language } = useLanguage();
@@ -18,10 +18,11 @@ export default function KnowledgePage() {
         <section className="archive-hero">
           <div className="archive-hero-grid">
             <div>
-              <div className="kicker">JOTAGGE / KNOWLEDGE ARCHIVE</div>
+              <span className="kicker">03 / KNOWLEDGE REPOSITORY</span>
               <h1 className="display-title">
-                Keep<br />
-                <em>thinking.</em>
+                KNOWLEDGE
+                <br />
+                <em>BASE.</em>
               </h1>
             </div>
             <div>
@@ -41,7 +42,7 @@ export default function KnowledgePage() {
         {/* KNOWLEDGE POSTS LIST */}
         <section className="project-list" style={{ marginTop: "40px" }}>
           {knowledgePosts.map((post, i) => {
-            const author = authors.find((a) => a.id === post.authorId);
+            const author = authors.find((a) => a.id === post.authorId) || authors[0];
             return (
               <Reveal key={post.slug} delay={i * 50}>
                 <Link
@@ -54,16 +55,35 @@ export default function KnowledgePage() {
                   </span>
 
                   <div>
+                    {/* Author & Date info */}
                     <div
                       style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "8px",
+                        marginBottom: "10px",
                         fontFamily: "var(--mono)",
                         fontSize: "10px",
-                        color: "var(--dim)",
-                        letterSpacing: "0.14em",
-                        marginBottom: "6px",
+                        letterSpacing: "0.12em",
                       }}
                     >
-                      {post.date} · {author?.name || "JOTAGGE"}
+                      {author?.avatar && (
+                        <div
+                          style={{
+                            position: "relative",
+                            width: "20px",
+                            height: "20px",
+                            borderRadius: "50%",
+                            overflow: "hidden",
+                            border: "1px solid var(--accent)",
+                          }}
+                        >
+                          <Image src={author.avatar} alt={author.name} fill style={{ objectFit: "cover" }} />
+                        </div>
+                      )}
+                      <span style={{ color: "var(--fg)", fontWeight: 500 }}>{author?.name}</span>
+                      <span style={{ color: "var(--dim)" }}>·</span>
+                      <span style={{ color: "var(--dim)" }}>{post.date}</span>
                     </div>
 
                     <h2>{post[language].title}</h2>
