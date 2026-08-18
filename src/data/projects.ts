@@ -28,6 +28,86 @@ export type Project = {
 
 export const projects: Project[] = [
 
+  {
+    slug: "kos",
+  image: "/kos.png",
+
+  // Imagens da galeria/carrossel:
+  images: [
+     "/kos-dashboard.png",
+     "/kos-domain.png",
+     "/kos-question.png",
+     "/kos-blue.png"
+   ],
+
+
+  featuredInResume: true,
+
+  pt: {
+    title: "KOS — Knowledge Operating System",
+    description: "Um sistema de aprendizagem baseado em recuperação ativa, organização do conhecimento e inteligência artificial.",
+
+    content: [
+      "O KOS nasceu da transformação do meu próprio método de estudos em um sistema independente do Notion. A estrutura organiza o conhecimento em Domains, Lessons, Modules e Questions, tendo a Question como unidade central do processo de aprendizagem.",
+
+      "O sistema utiliza Cycles para organizar o estudo e Sessions para transformar Questions em momentos concretos de aprendizagem. A proposta é permitir que qualquer pessoa construa sua própria estrutura de conhecimento, sobre qualquer assunto, enquanto acompanha visualmente seu progresso.",
+
+      "A Blue, inteligência artificial do KOS, amplia o método ao ajudar o usuário a descobrir o que quer aprender, estruturar Domains, Lessons e Modules, gerar Questions, fornecer feedback sobre respostas e recomendar próximos passos com base no progresso real.",
+
+      "O projeto também funciona como um laboratório para explorar a criação de produtos digitais, sistemas de aprendizagem e aplicações de inteligência artificial, transformando um método pessoal em uma experiência que pode ser utilizada por outras pessoas."
+    ],
+
+    tags: [
+      "AI",
+      "EdTech",
+      "Learning",
+      "React",
+      "TypeScript",
+      "Firebase",
+      "Gemini",
+      "Product Design"
+    ]
+  },
+
+  en: {
+    title: "KOS — Knowledge Operating System",
+    description: "A learning system built around active recall, knowledge organization, and artificial intelligence.",
+
+    content: [
+      "KOS began as an attempt to transform my own study method into a system independent from Notion. Its structure organizes knowledge into Domains, Lessons, Modules, and Questions, with the Question serving as the central unit of the learning process.",
+
+      "The system uses Cycles to organize learning and Sessions to turn Questions into concrete study experiences. The goal is to allow anyone to build their own knowledge structure around virtually any subject while maintaining a visible understanding of their progress.",
+
+      "Blue, KOS's artificial intelligence, extends the method by helping users discover what they want to learn, structure Domains, Lessons, and Modules, generate Questions, provide feedback on answers, and recommend next steps based on their actual learning progress.",
+
+      "The project also serves as a laboratory for exploring digital product development, learning systems, and artificial intelligence applications, turning a personal method into an experience that can be used by other people."
+    ],
+
+    tags: [
+      "AI",
+      "EdTech",
+      "Learning",
+      "React",
+      "TypeScript",
+      "Firebase",
+      "Gemini",
+      "Product Design"
+    ]
+  },
+
+  links: [
+    {
+      label: "Website",
+      href: "https://kos-study.web.app/"
+    },
+    {
+      label: "GitHub",
+      href: "https://github.com/JOTAGGE/KOS-app"
+    }
+  ]
+},
+// ==========================================
+
 {
   slug: "NOMA",
   image: "/nomacar.png",
