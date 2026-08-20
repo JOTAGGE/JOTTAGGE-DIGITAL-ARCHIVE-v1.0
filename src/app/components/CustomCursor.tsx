@@ -1,16 +1,28 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
+
+function subscribe(callback: () => void) {
+  const mql = window.matchMedia("(pointer: fine)");
+  mql.addEventListener("change", callback);
+  return () => mql.removeEventListener("change", callback);
+}
+
+function getSnapshot() {
+  return window.matchMedia("(pointer: fine)").matches;
+}
+
+function getServerSnapshot() {
+  return false;
+}
 
 export default function CustomCursor() {
-  const [enabled, setEnabled] = useState(false);
+  const isFinePointer = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
   const [label, setLabel] = useState("");
   const [pos, setPos] = useState({ x: -100, y: -100 });
 
   useEffect(() => {
-    if (window.matchMedia("(pointer: fine)").matches) {
-      setEnabled(true);
-    }
+    if (!isFinePointer) return;
 
     const handleMouseMove = (e: MouseEvent) => {
       setPos({ x: e.clientX, y: e.clientY });
@@ -20,9 +32,9 @@ export default function CustomCursor() {
 
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  }, [isFinePointer]);
 
-  if (!enabled) return null;
+  if (!isFinePointer) return null;
 
   return (
     <div

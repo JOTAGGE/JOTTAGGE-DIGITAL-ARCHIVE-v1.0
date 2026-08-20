@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = "https://jotaggehub.com";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://jotagge.vercel.app";
 
   return {
     rules: [

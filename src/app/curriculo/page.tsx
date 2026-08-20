@@ -132,7 +132,7 @@ export default function ResumePage() {
                 <h2 className="resume-section-title">03 / {t.resume.skillsTitle}</h2>
 
                 <div className="skills-category-grid">
-                  {skillsData.map((cat, idx) => (
+                  {skillsData.map((cat) => (
                     <div key={cat.title} className="skill-category-card">
                       <h4>{cat.title}</h4>
                       <p style={{ marginBottom: "14px" }}>{cat.text}</p>

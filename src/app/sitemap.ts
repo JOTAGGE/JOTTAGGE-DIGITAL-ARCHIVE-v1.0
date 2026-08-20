@@ -4,7 +4,7 @@ import { labExperiments } from "@/data/lab";
 import { knowledgePosts } from "@/data/knowledge";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://jotaggehub.com";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://jotagge.vercel.app";
   const currentDate = new Date();
 
   // Static core routes
