@@ -451,6 +451,10 @@ export const projects: Project[] = [
         label: "GitHub",
         href: "https://github.com/JOTAGGE/BlueBoard",
       },
+      {
+        label: "Live Site",
+        href: "https://blue-board-two.vercel.app"
+      }
     ],
   },
 
