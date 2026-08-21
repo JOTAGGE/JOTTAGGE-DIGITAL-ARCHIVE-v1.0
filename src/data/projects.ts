@@ -392,6 +392,10 @@ export const projects: Project[] = [
     {
       label: "GitHub",
       href: "https://github.com/JOTAGGE/Equipe-Glasgow-PDM"
+    },
+    {
+      label: "EXPO APP",
+      href: "https://expo.dev/preview/update?message=readme%20atualizado&updateRuntimeVersion=1.0.0&createdAt=2025-06-10T01%3A32%3A57.584Z&slug=exp&projectId=09530ffb-82dc-48b8-a1ee-c1fa691859ce&group=f675c353-b639-41a6-bc5e-0bc515bc4c33/"
     }
   ]
 },
